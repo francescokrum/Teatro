@@ -1,0 +1,14 @@
+-----------------x-----------------
+Nome: fran
+IP: 192.168.1.108
+Data: Wed Jun 21 14:21:08 BRT 2023
+Assento: 1
+Disponibilidade: ocupado
+
+-----------------x-----------------
+Nome: fran3
+IP: 192.168.1.108
+Data: Wed Jun 21 14:22:25 BRT 2023
+Assento: 2
+Disponibilidade: ocupado
+

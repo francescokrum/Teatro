@@ -1,0 +1,72 @@
+body {
+    color: #000000;
+    background-color: #483D8B;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ocupado {
+    margin-top: 22px;
+}
+
+.livre{
+    margin-top: 79px;
+}
+
+.titulo {
+    margin: 0px;
+}
+
+.form{
+    background-color: #008b8b;
+    width: 350px;
+    height: 150px;
+    margin-top: 70px;
+    border: black solid 4px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.bot{
+    margin-top: 10px;
+}
+
+.assentoPai {
+    width: 950px;
+    height: 500px;
+    background-color: #483D8B;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.assento1 {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border: black solid 3px;
+    margin: 5px;
+}
+
+.assento2 {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    border: black solid 3px;
+    margin: 5px;
+}
+
+p {
+    margin: 0px;
+}
+
+h2 {
+    margin: 5px;
+}
+
+.fileira {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

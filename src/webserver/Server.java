@@ -15,7 +15,7 @@ public class Server extends Thread{
 
     public static void main(String[] args) throws IOException {
         //recebe conexão
-        ServerSocket ss = new ServerSocket(88);
+        ServerSocket ss = new ServerSocket(8080);
         OutputStream logs = new FileOutputStream("log.txt");
         System.out.println("Iniciando servidor...");
 

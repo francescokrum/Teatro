@@ -1,5 +1,5 @@
 # Estágio de build
-FROM openjdk:11.0.4-jre-slim-buster
+FROM openjdk
 
 WORKDIR /app
 

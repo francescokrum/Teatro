@@ -3,6 +3,8 @@ package webserver;
 import classes.Assentos;
 import classes.Log;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -15,6 +17,8 @@ public class ClienteThread extends Thread {
 
     private Socket clienteSocket;
     private static int assento;
+    private static final String LOGS_PATH = "logs";
+
 
     public ClienteThread(Socket clienteSocket) {
         this.clienteSocket = clienteSocket;
@@ -23,7 +27,7 @@ public class ClienteThread extends Thread {
     @Override
     public void run() {
         try{
-            OutputStream logs = new FileOutputStream("log.txt", true);
+            OutputStream logs = new FileOutputStream(LOGS_PATH + File.separator + "log.txt", true);
             InputStream in = clienteSocket.getInputStream();
             OutputStream out = clienteSocket.getOutputStream();
 
@@ -96,8 +100,10 @@ public class ClienteThread extends Thread {
                     }
                     String logMessage = log.geraLog(id); // função para preencher uma string com os dados do assento
 
-                    logs.write(logMessage.getBytes(StandardCharsets.UTF_8)); // escreve no log oq tem na string (dados)
-                    logs.flush();
+                    FileWriter fileWriter = new FileWriter(LOGS_PATH + File.separator + "log.txt", true);
+                    fileWriter.write(logMessage);
+                    fileWriter.write(System.lineSeparator()); // Adiciona uma quebra de linha após cada registro
+                    fileWriter.close();
                 }
                 recurso = "/index.html";
             }
@@ -186,9 +192,9 @@ public class ClienteThread extends Thread {
         Integer.toString(assento);
 
         String form =   "<label for='nome'>Insira seu nome completo: </label> " +
-                        "<input type='text' name='nome' id='nome'> " +
-                        "<input type='hidden' value='" + assento + "' name='id' id='id'> " +
-                        "<div class='bot'> <button type='submit'>Reservar</button> </div>";
+                "<input type='text' name='nome' id='nome'> " +
+                "<input type='hidden' value='" + assento + "' name='id' id='id'> " +
+                "<div class='bot'> <button type='submit'>Reservar</button> </div>";
 
         return form;
     }

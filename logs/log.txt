@@ -14,3 +14,11 @@ Assento: 2
 Disponibilidade: ocupado
 
 
+-----------------x-----------------
+Nome: LOG
+IP: 192.168.1.108
+Data: Mon Jul 03 21:55:48 BRT 2023
+Assento: 1
+Disponibilidade: ocupado
+
+
